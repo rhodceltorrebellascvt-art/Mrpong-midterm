@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mr. Pong - Premium Table Tennis Gear</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'ping-red': '#dc2626',
+                        'ping-blue': '#1d4ed8',
+                        'ping-green': '#16a34a'
+                    },
+                    animation: {
+                        'bounce-slow': 'bounce 2s infinite',
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Exo+2:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+        .exo-font { font-family: 'Exo 2', sans-serif; }
+        .orbitron-font { font-family: 'Orbitron', monospace; }
+        .game-canvas { border: 4px solid #dc2626; image-rendering: pixelated; }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-gray-900 via-blue-900/20 to-emerald-900 text-white overflow-x-hidden">
+
+    <!-- Header / Logo -->
+    <header class="bg-black/70 backdrop-blur-md sticky top-0 z-50 border-b-4 border-ping-red">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <!-- Logo -->
+            <div class="flex items-center space-x-3">
+                <div class="w-16 h-16 bg-gradient-to-r from-ping-red to-ping-green p-2 rounded-2xl relative overflow-hidden animate-bounce-slow">
+                    <div class="w-full h-full bg-black/90 rounded-xl flex items-center justify-center exo-font text-sm font-bold text-white border-2 border-white/50">
+                        🏓
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent animate-pulse"></div>
+                </div>
+                <div>
+                    <h1 class="text-3xl md:text-4xl exo-font text-ping-red tracking-widest font-bold">MR. PONG</h1>
+                    <p class="text-sm text-gray-400 uppercase tracking-widest font-medium">Pro Table Tennis</p>
+                </div>
+            </div>
+            
+            <!-- Nav Links -->
+            <ul class="hidden lg:flex space-x-8 exo-font text-lg font-medium tracking-wide">
+                <li><a href="#home" class="hover:text-ping-green transition-all duration-300 border-b-2 border-transparent hover:border-ping-green pb-1">Home</a></li>
+                <li><a href="#services" class="hover:text-ping-green transition-all duration-300 border-b-2 border-transparent hover:border-ping-green pb-1">Gear</a></li>
+                <li><a href="#game" class="hover:text-ping-green transition-all duration-300 border-b-2 border-transparent hover:border-ping-green pb-1">Play Rally</a></li>
+                <li><a href="#about" class="hover:text-ping-green transition-all duration-300 border-b-2 border-transparent hover:border-ping-green pb-1">About</a></li>
+                <li><a href="#contact" class="hover:text-ping-green transition-all duration-300 border-b-2 border-transparent hover:border-ping-green pb-1">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center justify-center pt-24 px-6 relative overflow-hidden">
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(255,255,255,0.1),transparent_50%)]"></div>
+        <div class="container mx-auto text-center max-w-6xl relative z-10">
+            <div class="inline-flex items-center justify-center w-32 h-32 mb-12 bg-white/10 backdrop-blur-xl rounded-3xl animate-pulse">
+                <span class="text-4xl">🏓</span>
+            </div>
+            <h2 class="text-5xl md:text-8xl exo-font mb-8 bg-gradient-to-r from-ping-red via-white to-ping-green bg-clip-text text-transparent tracking-widest font-black">
+                MR. PONG 
+            </h2>
+            <p class="text-xl md:text-2xl mb-12 text-gray-300 max-w-4xl mx-auto leading-relaxed font-medium">
+                Professional table tennis equipment. Tournament-grade rubbers, blades, tables, apparel. 
+                Engineered for champions. Used by pros worldwide.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-6 justify-center items-center">
+                <a href="#game" class="px-12 py-6 bg-gradient-to-r from-ping-red to-ping-green hover:from-red-500 hover:to-green-500 text-black font-bold exo-font text-xl rounded-3xl transition-all transform hover:scale-105 shadow-2xl shadow-red-500/50 font-black tracking-wide">
+                    🎮 Rally Challenge
+                </a>
+                <a href="#contact" class="px-12 py-6 border-4 border-white hover:bg-white hover:text-black font-bold exo-font text-xl rounded-3xl transition-all transform hover:scale-105 shadow-2xl backdrop-blur-sm">
+                    Shop Now
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="services" class="py-36 bg-black/40">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-24">
+                <h3 class="text-5xl md:text-7xl exo-font mb-8 text-ping-green tracking-widest font-black">PRO GEAR</h3>
+                <p class="text-2xl text-gray-400 max-w-3xl mx-auto font-medium">
+                    Every piece engineered for victory
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10 max-w-7xl mx-auto">
+                <div class="group bg-black/60 border-2 border-gray-800/50 backdrop-blur-md p-8 rounded-3xl hover:border-ping-red hover:scale-105 transition-all duration-700 hover:bg-gradient-to-b hover:from-ping-red/10">
+                    <div class="w-24 h-24 bg-gradient-to-r from-ping-red to-orange-500 rounded-2xl flex items-center justify-center mx-auto mb-8 text-3xl group-hover:scale-110 transition-all">
+                        🏓
+                    </div>
+                    <h4 class="text-2xl exo-font mb-6 text-center font-bold tracking-wide text-white">Premium Rubbers</h4>
+                    <p class="text-gray-400 text-center mb-6 leading-relaxed">Tournament-grade rubbers. Spin-max tensor tech. 2.1mm sponge. Red/Black.</p>
+                    <div class="text-xl font-bold text-ping-green text-center">₱3,000 starting price</div>
+                </div>
+
+                <div class="group bg-black/60 border-2 border-gray-800/50 backdrop-blur-md p-8 rounded-3xl hover:border-ping-red hover:scale-105 transition-all duration-700 hover:bg-gradient-to-b hover:from-ping-red/10">
+                    <div class="w-24 h-24 bg-gradient-to-r from-ping-blue to-blue-400 rounded-2xl flex items-center justify-center mx-auto mb-8 text-3xl group-hover:scale-110 transition-all">
+                        🏓
+                    </div>
+                    <h4 class="text-2xl exo-font mb-6 text-center font-bold tracking-wide text-white">Carbon Blades</h4>
+                    <p class="text-gray-400 text-center mb-6 leading-relaxed">7-ply carbon fiber. OFF+/OFF speed. Perfect balance. Pro handle shapes.</p>
+                    <div class="text-xl font-bold text-ping-green text-center">₱7,000 starting price</div>
+                </div>
+
+                <div class="group bg-black/60 border-2 border-gray-800/50 backdrop-blur-md p-8 rounded-3xl hover:border-ping-red hover:scale-105 transition-all duration-700 hover:bg-gradient-to-b hover:from-ping-red/10">
+                    <div class="w-24 h-24 bg-gradient-to-r from-emerald-400 to-ping-green rounded-2xl flex items-center justify-center mx-auto mb-8 text-3xl group-hover:scale-110 transition-all">
+                        ⚪
+                    </div>
+                    <h4 class="text-2xl exo-font mb-6 text-center font-bold tracking-wide text-white">3-Star Balls</h4>
+                    <p class="text-gray-400 text-center mb-6 leading-relaxed">ABS seamless. ITTF approved. 40+mm. Bulk packs available.</p>
+                    <div class="text-xl font-bold text-ping-green text-center">₱500 starting price</div>
+                </div>
+
+                <div class="group bg-black/60 border-2 border-gray-800/50 backdrop-blur-md p-8 rounded-3xl hover:border-ping-red hover:scale-105 transition-all duration-700 hover:bg-gradient-to-b hover:from-ping-red/10">
+                    <div class="w-24 h-24 bg-gradient-to-r from-gray-400 to-gray-200 rounded-2xl flex items-center justify-center mx-auto mb-8 text-2xl group-hover:scale-110 transition-all">
+                        🏓
+                    </div>
+                    <h4 class="text-2xl exo-font mb-6 text-center font-bold tracking-wide text-white">Pro Tables</h4>
+                    <p class="text-gray-400 text-center mb-6 leading-relaxed">ITTF competition blue. 25mm top. Folding legs. Free delivery.</p>
+                    <div class="text-xl font-bold text-ping-green text-center">₱13,000 starting price</div>
+                </div>
+
+            
+
+                <div class="group bg-black/60 border-2 border-gray-800/50 backdrop-blur-md p-8 rounded-3xl hover:border-ping-red hover:scale-105
+                                <div class="group bg-black/60 border-2 border-gray-800/50 backdrop-blur-md p-8 rounded-3xl hover:border-ping-red hover:scale-105 transition-all duration-700 hover:bg-gradient-to-b hover:from-ping-red/10">
+                    <div class="w-24 h-24 bg-gradient-to-r from-ping-red to-pink-400 rounded-2xl flex items-center justify-center mx-auto mb-8 text-3xl group-hover:scale-110 transition-all">
+                        👕
+                    </div>
+                    <h4 class="text-2xl exo-font mb-6 text-center font-bold tracking-wide text-white">Performance Shirts</h4>
+                    <p class="text-gray-400 text-center mb-6 leading-relaxed">Moisture-wicking. Stretch fabric. Pro team cuts. Custom logos available.</p>
+                    <div class="text-xl font-bold text-ping-green text-center">₱700 starting price</div>
+                </div>
+
+                <div class="group bg-black/60 border-2 border-gray-800/50 backdrop-blur-md p-8 rounded-3xl hover:border-ping-red hover:scale-105 transition-all duration-700 hover:bg-gradient-to-b hover:from-ping-red/10 md:col-span-2 lg:col-span-1">
+                    <div class="w-24 h-24 bg-gradient-to-r from-gray-600 to-gray-400 rounded-2xl flex items-center justify-center mx-auto mb-8 text-3xl group-hover:scale-110 transition-all">
+                        🧳
+                    </div>
+                    <h4 class="text-2xl exo-font mb-6 text-center font-bold tracking-wide text-white">Pro Gear Bags</h4>
+                    <p class="text-gray-400 text-center mb-6 leading-relaxed">Padded paddle cases. Waterproof. Multiple compartments. Tournament ready.</p>
+                    <div class="text-xl font-bold text-ping-green text-center"> ₱500 starting price</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- INTERACTIVE TABLE TENNIS RALLY GAME -->
+    <section id="game" class="py-40 bg-gradient-to-b from-ping-red via-black to-ping-green relative overflow-hidden">
+        <div class="absolute inset-0 opacity-20">
+            <div class="absolute top-1/2 left-0 w-full h-px bg-white/30"></div>
+            <div class="absolute top-0 left-1/2 w-px h-full bg-white/30"></div>
+        </div>
+        <div class="container mx-auto px-6 relative z-20">
+            <div class="text-center mb-24">
+                <h3 class="text-5xl md:text-7xl exo-font mb-8 text-white tracking-widest font-black drop-shadow-2xl">RALLY CHALLENGE</h3>
+                <p class="text-2xl md:text-3xl text-white/90 max-w-4xl mx-auto mb-12 drop-shadow-lg font-medium">
+                    Keep the rally going! Use ← → to move paddle. Hit the ball back to your opponent.
+                </p>
+                <div class="flex flex-col lg:flex-row gap-12 items-center justify-center mb-16">
+                    <div class="text-left bg-black/70 backdrop-blur-md p-8 rounded-3xl border-2 border-white/30">
+                        <div class="text-4xl font-black mb-6 text-ping-green" id="rallyScore">Score: 0</div>
+                        <div class="text-4xl font-black mb-6 text-white" id="rallyStreak">Streak: 0</div>
+                        <div class="text-4xl font-bold mb-6 text-yellow-400" id="highScore">High: 0</div>
+                        <div class="text-xl space-y-3 font-medium">
+                            <p>← → Move paddle</p>
+                            <p>🏓 Keep ball in play</p>
+                            <p>🔥 Beat your high score</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex justify-center">
+                <canvas id="rallyCanvas" width="1000" height="600" class="game-canvas shadow-2xl rounded-3xl max-w-full mx-auto block"></canvas>
+            </div>
+            <div class="text-center mt-12">
+                <button id="restartRallyBtn" class="px-12 py-6 bg-gradient-to-r from-ping-red to-ping-green hover:from-red-500 hover:to-green-500 text-black font-bold exo-font text-2xl rounded-3xl transition-all transform hover:scale-105 shadow-2xl font-black hidden">
+                    New Rally
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-40 bg-black/40">
+        <div class="container mx-auto px-6 max-w-6xl">
+            <div class="grid lg:grid-cols-2 gap-20 items-center">
+                <div>
+                    <h3 class="text-5xl md:text-7xl exo-font mb-12 bg-gradient-to-r from-ping-red to-ping-green bg-clip-text text-transparent tracking-widest font-black">
+                        WHY MR PONG?
+                    </h3>
+                    <div class="space-y-10">
+                        <div>
+                            <h4 class="text-3xl exo-font mb-6 text-ping-green font-bold tracking-wide">Our Mission</h4>
+                            <p class="text-xl text-gray-300 leading-relaxed font-medium max-w-2xl">
+                                Equip every player with tournament-grade gear that performs when it matters most. 
+                                From club player to world champion.
+                            </p>
+                        </div>
+                        <div>
+                            <h4 class="text-3xl exo-font mb-6 text-ping-green font-bold tracking-wide">Our Vision</h4>
+                            <p class="text-xl text-gray-300 leading-relaxed font-medium max-w-2xl">
+                                Set the global standard for table tennis equipment innovation and performance.
+                            </p>
+                        </div>
+                        <div class="bg-gradient-to-r from-ping-red/20 to-ping-green/20 border-4 border-ping-red/40 p-10 rounded-3xl backdrop-blur-md">
+                            <h4 class="text-3xl exo-font mb-8 text-white font-bold tracking-wide text-center">Pro Approved:</h4>
+                            <div class="grid md:grid-cols-2 gap-6 text-xl font-semibold text-gray-200">
+                                <div>• ITTF Certified</div>
+                                <div>• Used by Top 50 players</div>
+                                <div>• 5-Year durability guarantee</div>
+                                <div>• Free stringing service</div>
+                                <div>• Custom grip options</div>
+                                <div>• Luzon, Visayas, and Mindanao shipping</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative">
+                    <div class="w-full h-[500px] bg-gradient-to-br from-ping-blue to-ping-green rounded-4xl p-12 flex items-center justify-center relative overflow-hidden group">
+                        <div class="text-9xl animate-bounce drop-shadow-4xl group-hover:animate-ping">🏓</div>
+                        <div class="absolute inset-0 bg-[radial-gradient(circle,rgba(255,255,255,0.1)_1px,transparent_1px)] [background-size:20px_20px]"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="contact" class="py-40">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-24">
+                <h3 class="text-5xl md:text-7xl exo-font mb-8 text-ping-green tracking-widest font-black">FREQUENTLY ASKED</h3>
+            </div>
+
+            <div class="max-w-5xl mx-auto space-y-8">
+                <div class="faq-item bg-black/60 border-2 border-gray-800/50 backdrop-blur-md rounded-4xl p-10 hover:border-ping-red hover:scale-[1.02] transition-all duration-500 cursor-pointer group">
+                    <div class="flex justify-between items-start" onclick="toggleFAQ(this)">
+                        <h4 class="text-3xl exo-font font-bold group-hover:text-ping-green transition-all tracking-wide">What rubbers are best for spin vs speed?</h4>
+                        <span class="text-4xl transition-all duration-300 group-hover:text-ping-green">▼</span>
+                    </div>
+                    <div class="mt-8 text-gray-300 text-xl leading-relaxed hidden pl-8 border-l-4 border-gray-600/50">
+                        <strong>Spin:</strong> Tacky Chinese rubbers (2.2mm+ sponge) <br>
+                        <strong>Speed:</strong> Euro/Japanese tensor (Max sponge, 50°+) <br>
+                        <strong>Allround:</strong> Our signature hybrid rubber - best of both worlds.
+                    </div>
+                </div>
+
+                <div class="faq-item bg-black/60 border-2 border-gray-800/50 backdrop-blur-md rounded-4xl p-10 hover:border-ping-red hover:scale-[1.02] transition-all duration-500 cursor-pointer group">
+                    <div class="flex justify-between items-start" onclick="toggleFAQ(this)">
+                        <h4 class="text-3xl exo-font font-bold group-hover:text-ping-green transition-all tracking-wide">Do you offer custom paddle assembly?</h4>
+                        <span class="text-4xl transition-all duration-300 group-hover:text-ping-green">▼</span>
+                    </div>
+                    <div class="mt-8 text-gray-300 text-xl leading-relaxed hidden pl-8 border-l-4 border-gray-600/50">
+                        Yes! Free professional assembly. Choose blade + 2 rubbers + edge tape. 
+                        48hr turnaround. Pro-level gluing and tensioning included.
+                    </div>
+                </div>
+
+                <div class="faq-item bg-black/60 border-2 border-gray-800/50 backdrop-blur-md rounded-4xl p-10 hover:border-ping-red hover:scale-[1.02] transition-all duration-500 cursor-pointer group">
+                    <div class="flex justify-between items-start" onclick="toggleFAQ(this)">
+                        <h4 class="text-3xl exo-font font-bold group-hover:text-ping-green transition-all tracking-wide">Are your products ITTF approved?</h4>
+                        <span class="text-4xl transition-all duration-300 group-hover:text-ping-green">▼</span>
+                    </div>
+                    <div class="mt-8 text-gray-300 text-xl leading-relaxed hidden pl-8 border-l-4 border-gray-600/50">
+                        100% ITTF certified. All rubbers, blades, balls, and tables meet international tournament standards. 
+                        Used in Olympics, World Championships, Pro Tour events.
+                    </div>
+                </div>
+
+                <div class="faq-item bg-black/60 border-2 border-gray-800/50 backdrop-blur-md rounded-4xl p-10 hover:border-ping-red hover:scale-[1.02] transition-all duration-500 cursor-pointer group">
+                    <div class="flex justify-between items-start" onclick="toggleFAQ(this)">
+                        <h4 class="text-3xl exo-font font-bold group-hover:text-ping-green transition-all tracking-wide">What is your shipping policy?</h4>
+                        <span class="text-4xl transition-all duration-300 group-hover:text-ping-green">▼</span>
+                    </div>
+                    <div class="mt-8 text-gray-300 text-xl leading-relaxed hidden pl-8 border-l-4 border-gray-600/50">
+                        Free US shipping over $150. Worldwide express available. 
+                        Paddle orders ship in 24-48hrs. Tables white glove delivery.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact CTA -->
+            <div class="text-center mt-32">
+                <h3 class="text-4xl md:text-6xl exo-font mb-8 text-white font-black tracking-widest">GEAR UP TODAY</h3>
+                <p class="text-2xl text-gray-400 mb-12 max-w-3xl mx-auto font-medium">Pro gear. Pro performance. Luzon, Visayas, and Mindanao shipping.</p>
+                <div class="flex flex-col md:flex-row gap-8 justify-center items-center max-w-3xl mx-auto">
+                    <a href="mailto:sales@pingforge.com" class="w-full md:w-auto px-16 py-8 bg-gradient-to-r from-ping-red to-ping-green hover:from-red-500 hover:to-green-500 text-black font-bold exo-font text-2xl rounded-4xl transition-all transform hover:scale-105 shadow-2xl shadow-red-500/50 text-center font-black tracking-wide">
+                        🛒 Shop Collection
+                    </a>
+                    <a href="tel:+18887777654" class="w-full md:w-auto px-16 py-8 border-4 border-white hover:bg-white hover:text-black font-bold exo-font text-2xl rounded-4xl transition-all transform hover:scale-105 shadow-2xl backdrop-blur-md font-black tracking-wide">
+                        📞  0999-9999-999
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gradient-to-t from-black to-gray-900 border-t-4 border-ping-red py-20 mt-32">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-12 text-center md:text-left">
+                <div>
+                    <div class="flex items-center justify-center md:justify-start mb-8">
+                        <div class="w-14 h-14 bg-gradient-to-r from-ping-red to-ping-green p-2 rounded-2xl mr-4 animate-pulse">
+                            <div class="w-full h-full bg-black rounded-xl flex items-center justify-center exo-font text-xs font-bold text-white border-2 border-white/50">🏓</div>
+                        </div>
+                        <div class="exo-font text-3xl text-ping-red tracking-widest font-black">MR PONG</div>
+                    </div>
+                    <p class="text-gray-400 text-lg font-medium">Gear trusted by champions since 2015.</p>
+                </div>
+                <div>
+                    <h5 class="exo-font text-2xl font-bold text-white mb-8 tracking-wide">Products</h5>
+                    <ul class="space-y-4 text-gray-400 text-lg font-medium">
+                        <li><a href="#" class="hover:text-ping-green transition-colors">Rubbers</a></li>
+                        <li><a href="#" class="hover:text-ping-green transition-colors">Blades</a></li>
+                        <li><a href="#" class="hover:text-ping-green transition-colors">Tables</a></li>
+                        <li><a href="#" class="hover:text-ping-green transition-colors">Apparel</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="exo-font text-2xl font-bold text-white mb-8 tracking-wide">Support</h5>
+                    <ul class="space-y-4 text-gray-400 text-lg font-medium">
+                        <li><a href="#" class="hover:text-ping-green transition-colors">Custom Assembly</a></li>
+                        <li><a href="#" class="hover:text-ping-green transition-colors">Warranty</a></li>
+                        <li><a href="#" class="hover:text-ping-green transition-colors">Shipping</a></li>
+                        <li><a href="#" class="hover:text-ping-green transition-colors">Returns</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="exo-font text-2xl font-bold text-white mb-8 tracking-wide">Contact</h5>
+                    <div class="space-y-4 text-gray-400 text-lg font-medium">
+                        <div>sales@Mrpong.com</div>
+                        <div>0999-9999-999</div>
+                        <div>Mon-Fri 9AM-7PM EST</div>
+                        <div>🏓 Luzon, Visayas, and Mindanao Shipping</div>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-16 pt-12 text-center text-sm text-gray-500 font-medium">
+                <p>&copy; 2026 Mrpong. Engineered for champions. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- COMPLETE TABLE TENNIS RALLY GAME -->
+    <script>
+        const canvas = document.getElementById('rallyCanvas');
+        const ctx = canvas.getContext('2d');
+        const scoreEl = document.getElementById('rallyScore');
+        const streakEl = document.getElementById('rallyStreak');
+        const highScoreEl = document.getElementById('highScore');
+        const restartBtn = document.getElementById('restartRallyBtn');
+
+        let game = {
+            score: 0,
+            streak: 0,
+            highScore: localStorage.getItem('pingHighScore') || 0,
+            gameRunning: false,
+            player: { x: 450, width: 100, height: 20, speed: 12 },
+            ball: { x: 500, y: 300, vx: 8, vy: 6, radius: 8 },
+            opponent: { x: 450, width: 100, height: 20 },
+            keys: {},
+            lastHit: 0
+        };
+
+        highScoreEl.textContent = `High: ${game.highScore}`;
+
+        // Controls
+        document.addEventListener('keydown', (e) => game.keys[e.key] = true);
+        document.addEventListener('keyup', (e) => game.keys[e.key] = false);
+        restartBtn.addEventListener('click', startGame);
+        canvas.addEventListener('click', startGame);
+
+        function startGame() {
+            game = {
+                score: 0,
+                streak: 0,
+                highScore: game.highScore,
+                gameRunning: true,
+                player: { x: 450, width: 100, height: 20, speed: 12 },
+                ball: { x: 500, y: 300, vx: 8, vy: 6, radius: 8 },
+                opponent: { x: 450, width: 100, height: 20 },
+                keys: {},
+                lastHit: 0
+            };
+            restartBtn.classList.add('hidden');
+                       updateUI();
+            gameLoop();
+        }
+
+        function gameLoop() {
+            if (!game.gameRunning) return;
+            
+            update();
+            draw();
+            requestAnimationFrame(gameLoop);
+        }
+
+        function update() {
+            // Player movement
+            if (game.keys['ArrowLeft'] && game.player.x > 0) {
+                game.player.x -= game.player.speed;
+            }
+            if (game.keys['ArrowRight'] && game.player.x < canvas.width - game.player.width) {
+                game.player.x += game.player.speed;
+            }
+
+            // Ball physics
+            game.ball.x += game.ball.vx;
+            game.ball.y += game.ball.vy;
+
+            // Ball wall collision
+            if (game.ball.x + game.ball.radius > canvas.width || game.ball.x - game.ball.radius < 0) {
+                game.ball.vx *= -1;
+            }
+            if (game.ball.y - game.ball.radius < 0) {
+                game.ball.vy *= -1;
+            }
+
+            // Player paddle collision (bottom)
+            if (game.ball.y + game.ball.radius > canvas.height - 40 &&
+                game.ball.y + game.ball.radius < canvas.height - 20 &&
+                game.ball.x > game.player.x &&
+                game.ball.x < game.player.x + game.player.width) {
+                
+                game.ball.vy *= -1.1; // Bounce + speed increase
+                game.ball.vx += (game.ball.x - (game.player.x + game.player.width / 2)) * 0.2; // Spin effect
+                game.score += 10;
+                game.streak++;
+                game.lastHit = Date.now();
+            }
+
+            // Opponent paddle collision (top)
+            if (game.ball.y - game.ball.radius < 60 &&
+                game.ball.y - game.ball.radius > 40 &&
+                game.ball.x > game.opponent.x &&
+                game.ball.x < game.opponent.x + game.opponent.width) {
+                
+                game.ball.vy *= -1.05;
+                game.opponent.x += (game.ball.x - (game.opponent.x + game.opponent.width / 2)) * 0.3;
+            }
+
+            // Opponent AI - follow ball
+            const targetX = game.ball.x - game.opponent.width / 2;
+            if (game.opponent.x < targetX - 5) {
+                game.opponent.x += 6;
+            } else if (game.opponent.x > targetX + 5) {
+                game.opponent.x -= 6;
+            }
+
+            // Ball misses player (game over)
+            if (game.ball.y > canvas.height) {
+                if (game.score > game.highScore) {
+                    game.highScore = game.score;
+                    localStorage.setItem('pingHighScore', game.highScore);
+                }
+                gameOver();
+            }
+
+            // Ball speed limit
+            const speed = Math.sqrt(game.ball.vx * game.ball.vx + game.ball.vy * game.ball.vy);
+            if (speed > 20) {
+                game.ball.vx = (game.ball.vx / speed) * 20;
+                game.ball.vy = (game.ball.vy / speed) * 20;
+            }
+        }
+
+        function draw() {
+            // Table background
+            const gradient = ctx.createLinearGradient(0, 0, 0, canvas.height);
+            gradient.addColorStop(0, '#1e3a8a');
+            gradient.addColorStop(0.5, '#0ea5e9');
+            gradient.addColorStop(1, '#1e3a8a');
+            ctx.fillStyle = gradient;
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            // Center line
+            ctx.strokeStyle = 'rgba(255,255,255,0.6)';
+            ctx.lineWidth = 4;
+            ctx.setLineDash([20, 20]);
+            ctx.beginPath();
+            ctx.moveTo(canvas.width / 2, 0);
+            ctx.lineTo(canvas.width / 2, canvas.height);
+            ctx.stroke();
+            ctx.setLineDash([]);
+
+            // Net
+            ctx.fillStyle = 'rgba(255,255,255,0.9)';
+            ctx.fillRect(canvas.width / 2 - 4, canvas.height / 2 - 60, 8, 120);
+
+            // Opponent paddle
+            ctx.fillStyle = '#ff6b6b';
+            ctx.shadowColor = '#ff6b6b';
+            ctx.shadowBlur = 20;
+            ctx.fillRect(game.opponent.x, 40, game.opponent.width, game.opponent.height);
+            ctx.shadowBlur = 0;
+
+            // Player paddle
+            ctx.fillStyle = '#4ade80';
+            ctx.shadowColor = '#4ade80';
+            ctx.shadowBlur = 25;
+            ctx.fillRect(game.player.x, canvas.height - 40, game.player.width, game.player.height);
+            ctx.shadowBlur = 0;
+
+            // Ball with glow
+            const ballGradient = ctx.createRadialGradient(game.ball.x, game.ball.y, 0, game.ball.x, game.ball.y, game.ball.radius);
+            ballGradient.addColorStop(0, '#ffffff');
+            ballGradient.addColorStop(0.7, '#ffeb3b');
+            ballGradient.addColorStop(1, '#f59e0b');
+            ctx.fillStyle = ballGradient;
+            ctx.shadowColor = '#ffeb3b';
+            ctx.shadowBlur = 30;
+            ctx.beginPath();
+            ctx.arc(game.ball.x, game.ball.y, game.ball.radius, 0, Math.PI * 2);
+            ctx.fill();
+            ctx.shadowBlur = 0;
+
+            // Trail effect
+            ctx.fillStyle = 'rgba(255, 235, 59, 0.3)';
+            ctx.beginPath();
+            ctx.arc(game.ball.x - game.ball.vx * 2, game.ball.y - game.ball.vy * 2, game.ball.radius * 0.6, 0, Math.PI * 2);
+            ctx.fill();
+
+            // Instructions
+            if (!game.gameRunning) {
+                ctx.fillStyle = 'rgba(0,0,0,0.8)';
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+                ctx.fillStyle = '#ffffff';
+                ctx.font = 'bold 64px Exo 2';
+                ctx.textAlign = 'center';
+                ctx.fillText('🏓 RALLY CHALLENGE 🏓', canvas.width / 2, canvas.height / 2 - 50);
+                ctx.font = 'bold 36px Exo 2';
+                ctx.fillText(`High Score: ${game.highScore}`, canvas.width / 2, canvas.height / 2 + 30);
+                ctx.font = '32px Exo 2';
+                ctx.fillText('Click or ENTER to Play', canvas.width / 2, canvas.height / 2 + 100);
+                ctx.fillText('← → Arrow Keys', canvas.width / 2, canvas.height / 2 + 150);
+            }
+        }
+
+        function updateUI() {
+            scoreEl.textContent = `Score: ${game.score}`;
+            streakEl.textContent = `Streak: ${game.streak}`;
+            highScoreEl.textContent = `High: ${game.highScore}`;
+        }
+
+        function gameOver() {
+            game.gameRunning = false;
+            restartBtn.classList.remove('hidden');
+            updateUI();
+        }
+
+        // FAQ Toggle
+        function toggleFAQ(element) {
+            const content = element.nextElementSibling;
+            const arrow = element.querySelector('span');
+            
+            content.classList.toggle('hidden');
+            arrow.textContent = content.classList.contains('hidden') ? '▼' : '▲';
+        }
+
+        // Smooth scroll for nav links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Initialize
+        updateUI();
+        draw();
+    </script>
+</body>
+</html>
